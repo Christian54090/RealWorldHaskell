@@ -1,0 +1,33 @@
+
+tidyLet = let foo = undefined
+              bar = foo * 2
+          in undefined
+
+commonDo = do
+  something <- undefined
+  return ()
+
+rareDo =
+  do something <- undefined
+     return ()
+
+unusualPunctuation =
+  [ (x,y) | x <- [1..a], y <- [1..b] ] where { b = 7; a = 6 }
+
+preferredLayout = [ (x,y) | x <- [1..a], y <- [1..b] ]
+  where b = 7
+        a = 6
+
+goodWhere1 = take 5 lambdas
+  where lambdas = []
+
+goodWhere2 =
+    take 5 lambdas
+  where
+    lambdas = []
+
+badWhere =
+  take 5 lambdas
+  where
+  lambdas = []
+
