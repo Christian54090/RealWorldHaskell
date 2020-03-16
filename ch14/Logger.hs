@@ -14,10 +14,10 @@ myLiftM2 f m1 m2 =
 newtype Logger a = Logger { execLogger :: (a, Log) }
 
 record s = Logger ((),[s])
-
-instance Monad Logger where
-  return a = Logger (a,[])
-  m >>= f = let (a,w) = execLogger m
-                n     = f a
-                (b,x) = execLogger n
-            in Logger (b, w ++ x)
+--
+--instance Monad Logger where
+--  return a = Logger (a,[])
+--  m >>= f = let (a,w) = execLogger m
+--                n     = f a
+--                (b,x) = execLogger n
+--            in Logger (b, w ++ x)
