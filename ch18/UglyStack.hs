@@ -49,3 +49,9 @@ runMyApp k maxDepth =
 -- of our monad is a stack of monad transformers
 
 -- large deriving clause requires the GeneralizedNewtypeDeriving pragma
+
+implicitGet :: App AppState
+implicitGet = get
+
+explicitGet :: App AppState
+explicitGet = lift get
